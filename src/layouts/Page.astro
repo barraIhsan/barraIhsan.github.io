@@ -14,9 +14,19 @@ const { title } = Astro.props;
 		<meta property="og:site_name" content="Barra Ihsan">
 		<meta name="theme-color" content="#007EFF">
 
+		<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+
 		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
+
+		<script>
+			twemoji.parse(document.body, {
+				folder: 'svg',
+				ext: '.svg',
+				className: 'inline size-[1em] align-[-0.1em] mx-[.07em] select-none'
+			});
+		</script>
 	</body>
 </html>
