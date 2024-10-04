@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
+import { Github, X as Twitter } from "simple-icons-astro";
 ---
 
 <Layout title="Barra Ihsan">
@@ -10,14 +11,28 @@ import Navbar from "../components/Navbar.astro";
       <div class="font-extrabold">
         <h1 class="text-4xl font-extrabold md:text-6xl 2xl:text-8xl">Hello!</h1>
         <h1 class="text-5xl font-extrabold md:text-8xl 2xl:text-9xl">
-          I'm Barra 👋
+          I'm Barra
         </h1>
       </div>
 
-      <p class="text-md md:text-3xl 2xl:text-4xl">
-        I’m a Front-End developer, currently interested at making useful website
+      <p class="text-md md:text-3xl 2xl:text-4xl md:mt-5">
+        I'm a Front-End developer, currently interested at making useful website
         and CLI tools using Rust.
       </p>
+
+      <div class="flex gap-4 md:gap-8">
+        <a href="https://github.com/barraIhsan" target="_blank">
+          <Github
+            class="size-7 fill-gray-50 transition-colors hover:fill-gray-300 md:size-12"
+          />
+        </a>
+
+        <a href="https://twitter.com/barrsan_" target="_blank">
+          <Twitter
+            class="size-7 fill-gray-50 transition-colors hover:fill-gray-300 md:size-12"
+          />
+        </a>
+      </div>
 
       <!-- Mesh Gradient Background-->
       <div
