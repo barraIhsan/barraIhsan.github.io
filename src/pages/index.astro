@@ -6,6 +6,8 @@ import {
   Github,
   X as Twitter,
   Css3,
+  Tailwindcss,
+  Sanity,
   Html5,
   Javascript,
   Typescript,
@@ -15,14 +17,21 @@ import {
   Nextdotjs,
   Vite,
   Neovim,
-  Rust,
-  Go,
-  Zig,
-  C,
-  Cplusplus,
-  Python,
-  Webassembly,
 } from "simple-icons-astro";
+
+const stacks = [
+  { Icon: Html5, name: "HTML" },
+  { Icon: Css3, name: "CSS" },
+  { Icon: Tailwindcss, name: "Tailwind" },
+  { Icon: Javascript, name: "JavaScript" },
+  { Icon: Typescript, name: "TypeScript" },
+  { Icon: Astrodotdev, name: "Astro" },
+  { Icon: Svelte, name: "Svelte" },
+  { Icon: React, name: "React" },
+  { Icon: Nextdotjs, name: "Next.js" },
+  { Icon: Vite, name: "Vite" },
+  { Icon: Neovim, name: "Neovim" },
+];
 ---
 
 <Layout title="Barra Ihsan">
