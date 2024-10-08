@@ -76,58 +76,49 @@ const stacks = [
     </div>
   </main>
   <section class="container mx-auto px-5 sm:px-12 mt-32 md:mt-52">
-    <h2 class="text-2xl md:text-5xl font-bold">What I work with</h2>
-    <div class="flex flex-wrap mx-auto justify-center sm:justify-start xl:justify-between gap-6 md:gap-9 2xl:gap-12 mt-12 max-w-96 sm:max-w-none">
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <Html5 class="size-7 md:size-12" />
-        <span>HTML</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <Css3 class="size-7 md:size-12" />
-        <span>CSS</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <Javascript class="size-7 md:size-12" />
-        <span class="hidden sm:inline">JavaScript</span>
-        <span class="inline sm:hidden">JS</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <Typescript class="size-7 md:size-12" />
-        <span class="hidden sm:inline">TypeScript</span>
-        <span class="inline sm:hidden">TS</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <Astrodotdev class="size-7 md:size-12" />
-        <span>Astro</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <Svelte class="size-7 md:size-12" />
-        <span>Svelte</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <React class="size-7 md:size-12" />
-        <span>React</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <Nextdotjs class="size-7 md:size-12" />
-        <span class="hidden sm:inline">Next.js</span>
-        <span class="inline sm:hidden">Next</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <Vite class="size-7 md:size-12" />
-        <span>Vite</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <Neovim class="size-7 md:size-12" />
-        <span class="hidden sm:inline">Neovim</span>
-        <span class="inline sm:hidden">Nvim</span>
-      </div>
+    <h2 class="text-2xl md:text-5xl font-bold">Projects</h2>
+    <div
+      class="mt-12 w-full aspect-video border border-gray-600 rounded-2xl p-5 md:p-8 relative group overflow-hidden"
+    >
+      <a
+        href="/projects/aviaventura"
+        class="flex flex-col h-full justify-end gap-3 sm:gap-5"
+      >
+        <p class="text-xl md:text-3xl z-10">AviaVentura</p>
+        <p class="text-lg md:text-xl z-10">
+          AviaVentura is a company that provides aero agency
+        </p>
+        <div class="flex gap-3 z-10">
+          <div class="p-2 border border-gray-500 rounded-xl flex gap-2 w-fit">
+            <Astrodotdev />
+            <span>Astro</span>
+          </div>
+          <div class="p-2 border border-gray-500 rounded-xl flex gap-2 w-fit">
+            <Tailwindcss />
+            <span>Tailwind</span>
+          </div>
+          <div class="p-2 border border-gray-500 rounded-xl flex gap-2 w-fit">
+            <Typescript />
+            <span>Typescript</span>
+          </div>
+          <div class="p-2 border border-gray-500 rounded-xl flex gap-2 w-fit">
+            <Sanity />
+            <span>Sanity</span>
+          </div>
+        </div>
+        <div class="absolute inset-0 bg-black">
+          <img
+            src="/img/aviaventura.png"
+            class="size-full object-cover group-hover:scale-110 transition-transform duration-300 mask-image-gradient-to-t from-transparent to-transparent/60 to-70%"
+          />
+        </div>
+      </a>
     </div>
   </section>
   <section class="container mx-auto px-5 sm:px-12 mt-32 md:mt-52">
     <h2 class="text-2xl md:text-5xl font-bold">Tech Stacks</h2>
     <div
-      class="[--gap:1.5rem] [--direction:reverse] py-4 overflow-hidden [mask:linear-gradient(90deg,transparent,white_20%,white_80%,transparent)] motion-reduce:[mask:none] mt-4 md:mt-8"
+      class="[--gap:1.5rem] py-4 overflow-hidden [mask:linear-gradient(90deg,transparent,white_20%,white_80%,transparent)] motion-reduce:[mask:none] mt-4 md:mt-8"
     >
       <ul
         class="flex gap-[--gap] text-lg xl:text-2xl w-max motion-reduce:flex-wrap animate-scroll hover:[animation-play-state:paused] motion-reduce:animate-none"
