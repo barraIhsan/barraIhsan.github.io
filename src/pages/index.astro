@@ -19,19 +19,7 @@ import {
   Neovim,
 } from "simple-icons-astro";
 
-const stacks = [
-  { Icon: Html5, name: "HTML" },
-  { Icon: Css3, name: "CSS" },
-  { Icon: Tailwindcss, name: "Tailwind" },
-  { Icon: Javascript, name: "JavaScript" },
-  { Icon: Typescript, name: "TypeScript" },
-  { Icon: Astrodotdev, name: "Astro" },
-  { Icon: Svelte, name: "Svelte" },
-  { Icon: React, name: "React" },
-  { Icon: Nextdotjs, name: "Next.js" },
-  { Icon: Vite, name: "Vite" },
-  { Icon: Neovim, name: "Neovim" },
-];
+import { stacks } from "../data/stacks.js";
 ---
 
 <Layout title="Barra Ihsan">
@@ -115,7 +103,7 @@ const stacks = [
       </a>
     </div>
   </section>
-  <section class="container mx-auto px-5 sm:px-12 mt-32 md:mt-52">
+  <section class="container mx-auto px-5 sm:px-12 mt-24 md:mt-52">
     <h2 class="text-2xl md:text-5xl font-bold">Tech Stacks</h2>
     <div
       class="[--gap:1.5rem] py-4 overflow-hidden [mask:linear-gradient(90deg,transparent,white_20%,white_80%,transparent)] motion-reduce:[mask:none] mt-4 md:mt-8"
@@ -124,12 +112,34 @@ const stacks = [
         class="flex gap-[--gap] text-lg xl:text-2xl w-max motion-reduce:flex-wrap animate-scroll hover:[animation-play-state:paused] motion-reduce:animate-none"
       >
         {
-          stacks.concat(stacks).map(({ Icon, name }) => (
-            <li class="flex gap-4 items-center">
-              <Icon class="size-6 xl:size-10" />
-              <span>{name}</span>
-            </li>
-          ))
+          stacks
+            .slice(0, 12)
+            .concat(stacks.slice(0, 12))
+            .map(({ Icon, name }) => (
+              <li class="flex gap-4 items-center">
+                <Icon class="size-6 xl:size-10" />
+                <span>{name}</span>
+              </li>
+            ))
+        }
+      </ul>
+    </div>
+    <div
+      class="[--gap:1.5rem] [--duration:20s] [--direction:reverse] py-4 overflow-hidden [mask:linear-gradient(90deg,transparent,white_20%,white_80%,transparent)] motion-reduce:[mask:none] md:mt-5"
+    >
+      <ul
+        class="flex gap-[--gap] text-lg xl:text-2xl w-max motion-reduce:flex-wrap animate-scroll hover:[animation-play-state:paused] motion-reduce:animate-none"
+      >
+        {
+          stacks
+            .slice(11)
+            .concat(stacks.slice(11))
+            .map(({ Icon, name }) => (
+              <li class="flex gap-4 items-center">
+                <Icon class="size-6 xl:size-10" />
+                <span>{name}</span>
+              </li>
+            ))
         }
       </ul>
     </div>
