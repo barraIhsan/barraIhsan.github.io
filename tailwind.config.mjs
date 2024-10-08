@@ -6,6 +6,17 @@ export default {
       fontFamily: {
         mono: ["Jetbrains Mono", "Courier New", "Courier", "monospace"],
       },
+      keyframes: {
+        scroll: {
+          "100%": {
+            transform: "translate(calc(-50% - var(--gap) / 2))",
+          },
+        },
+      },
+      animation: {
+        scroll:
+          "scroll var(--duration, 30s) var(--direction, forwards) linear infinite",
+      },
     },
   },
   plugins: [],

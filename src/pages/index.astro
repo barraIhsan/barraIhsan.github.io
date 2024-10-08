@@ -114,39 +114,24 @@ import {
         <span class="inline sm:hidden">Nvim</span>
       </div>
     </div>
-
-    <h2 class="text-xl md:text-4xl font-bold mt-16 md:mt-32">
-      Currently interested in
-    </h2>
-    <div class="flex flex-wrap mx-auto justify-center sm:justify-start xl:justify-between gap-6 md:gap-8 2xl:gap-12 mt-6 md:mt-12 max-w-72 sm:max-w-none">
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <Rust class="size-7 md:size-12" />
-        <span>Rust</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <Go class="size-7 md:size-12" />
-        <span>Go</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <Zig class="size-7 md:size-12" />
-        <span>Zig</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <C class="size-7 md:size-12" />
-        <span>C</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <Cplusplus class="size-7 md:size-12" />
-        <span>C++</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <Python class="size-7 md:size-12" />
-        <span>Python</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center font-semibold sm:text-3xl md:text-4xl">
-        <Webassembly class="size-7 md:size-12" />
-        <span>WASM</span>
-      </div>
+  </section>
+  <section class="container mx-auto px-5 sm:px-12 mt-32 md:mt-52">
+    <h2 class="text-2xl md:text-5xl font-bold">Tech Stacks</h2>
+    <div
+      class="[--gap:1.5rem] [--direction:reverse] py-4 overflow-hidden [mask:linear-gradient(90deg,transparent,white_20%,white_80%,transparent)] motion-reduce:[mask:none] mt-4 md:mt-8"
+    >
+      <ul
+        class="flex gap-[--gap] text-lg xl:text-2xl w-max motion-reduce:flex-wrap animate-scroll hover:[animation-play-state:paused] motion-reduce:animate-none"
+      >
+        {
+          stacks.concat(stacks).map(({ Icon, name }) => (
+            <li class="flex gap-4 items-center">
+              <Icon class="size-6 xl:size-10" />
+              <span>{name}</span>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </section>
   <Footer />
