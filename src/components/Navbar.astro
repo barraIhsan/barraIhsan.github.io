@@ -1,14 +1,31 @@
 ---
 import { Github, X as Twitter } from "simple-icons-astro";
+let pathname = Astro.url.pathname;
 ---
 
 <nav
   class="container mx-auto flex justify-between items-center mt-8 md:mt-16 px-5 sm:px-12"
 >
   <ul class="flex gap-6 md:gap-12 text-md md:text-2xl">
-    <li><a href="/">Home</a></li>
-    <li><a href="/projects">Projects</a></li>
-    <li><a href="/blogs">Blogs</a></li>
+    <li>
+      <a href="/" class={pathname == "/" ? "font-semibold" : "text-gray-500"}
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        href="/projects"
+        class={pathname == "/projects" ? "font-semibold" : "text-gray-500"}
+        >Projects</a
+      >
+    </li>
+    <li>
+      <a
+        href="/blogs"
+        class={pathname == "/blogs" ? "font-semibold" : "text-gray-500"}
+        >Blogs</a
+      >
+    </li>
   </ul>
   <div class="flex gap-4 md:gap-8">
     <a href="https://github.com/barraIhsan" target="_blank">
