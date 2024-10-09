@@ -1,7 +1,26 @@
-<nav class="container mx-auto mt-8 md:mt-16 px-5 sm:px-12">
+---
+import { Github, X as Twitter } from "simple-icons-astro";
+---
+
+<nav
+  class="container mx-auto flex justify-between items-center mt-8 md:mt-16 px-5 sm:px-12"
+>
   <ul class="flex gap-6 md:gap-12 text-md md:text-2xl">
     <li><a href="/">Home</a></li>
     <li><a href="/projects">Projects</a></li>
     <li><a href="/blogs">Blogs</a></li>
   </ul>
+  <div class="flex gap-4 md:gap-8">
+    <a href="https://github.com/barraIhsan" target="_blank">
+      <Github
+        class="size-8 fill-gray-50 transition-colors hover:fill-gray-30"
+      />
+    </a>
+
+    <a href="https://twitter.com/barrsan_" target="_blank">
+      <Twitter
+        class="size-8 fill-gray-50 transition-colors hover:fill-gray-300"
+      />
+    </a>
+  </div>
 </nav>
