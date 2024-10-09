@@ -1,0 +1,44 @@
+---
+const { project } = Astro.props;
+---
+
+<a href={project.link} target="_blank">
+  <div
+    class="mt-5 md:mt-12 flex flex-col justify-end gap-2 lg:gap-5 w-full aspect-video border border-gray-600 rounded-2xl p-5 md:p-8 relative overflow-hidden group"
+  >
+    <p class="hidden sm:block text-xl md:text-2xl lg:text-3xl z-10">
+      {project.title}
+    </p>
+    <p class="hidden sm:block text-base md:text-lg lg:text-xl z-10">
+      {project.desc}
+    </p>
+    <div
+      class="hidden sm:flex flex-wrap gap-2 lg:gap-3 z-10 mt-2 text-sm lg:text-lg"
+    >
+      {
+        project.stacks.map(({ Icon, name }) => (
+          <div class="p-1.5 lg:p-2 border border-gray-500 rounded-xl flex items-center gap-2 w-fit">
+            <Icon class="size-4 lg:size-6" />
+            <span>{name}</span>
+          </div>
+        ))
+      }
+    </div>
+    <img
+      src={"/img/" + project.title.toLowerCase().replace(" ", "-") + ".png"}
+      class="absolute inset-0 bg-black size-full object-cover sm:group-hover:scale-110 transition-transform duration-300 brightness-75 sm:brightness-100 sm:mask-image-gradient-to-t from-transparent to-transparent/60 to-70%"
+    />
+  </div>
+  <p class="block sm:hidden text-xl mt-5">{project.title}</p>
+  <p class="block sm:hidden text-sm mt-2">{project.desc}</p>
+</a>
+<div class="sm:hidden flex flex-wrap gap-2 text-xs mt-5">
+  {
+    project.stacks.map(({ Icon, name }) => (
+      <div class="p-1.5 border border-gray-500 rounded-xl flex items-center gap-2 w-fit">
+        <Icon class="size-4" />
+        <span>{name}</span>
+      </div>
+    ))
+  }
+</div>
