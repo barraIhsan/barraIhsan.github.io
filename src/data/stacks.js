@@ -10,7 +10,6 @@ export const stacks = [
   { Icon: Icons.Svelte, name: "Svelte" },
   { Icon: Icons.React, name: "React" },
   { Icon: Icons.Nextdotjs, name: "Next.js" },
-  { Icon: Icons.Vite, name: "Vite" },
   { Icon: Icons.Neovim, name: "Neovim" },
   { Icon: Icons.Git, name: "Git" },
   { Icon: Icons.Github, name: "GitHub" },
