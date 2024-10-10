@@ -12,21 +12,29 @@ let pathname = Astro.url.pathname;
     <a class="text-3xl font-extrabold hidden lg:block" href="/">Barra</a>
     <ul class="flex gap-6 md:gap-12 text-base sm:text-xl md:text-2xl">
       <li>
-        <a href="/" class={pathname == "/" ? "font-semibold" : "text-gray-500"}
+        <a
+          href="/"
+          class={pathname == "/"
+            ? "font-semibold"
+            : "text-gray-500 transition-colors duration-300 hover:text-gray-300"}
           >Home</a
         >
       </li>
       <li>
         <a
           href="/projects"
-          class={pathname == "/projects" ? "font-semibold" : "text-gray-500"}
+          class={pathname == "/projects"
+            ? "font-semibold"
+            : "text-gray-500 transition-colors duration-300 hover:text-gray-300"}
           >Projects</a
         >
       </li>
       <li>
         <a
           href="/blogs"
-          class={pathname == "/blogs" ? "font-semibold" : "text-gray-500"}
+          class={pathname == "/blogs"
+            ? "font-semibold"
+            : "text-gray-500 transition-colors duration-300 hover:text-gray-300"}
           >Blogs</a
         >
       </li>
