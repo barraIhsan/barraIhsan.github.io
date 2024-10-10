@@ -49,6 +49,26 @@ import "../styles/global.css";
         ext: ".svg",
         className: "inline size-[1em] align-[-0.1em] select-none",
       });
+
+      // scroll-driven animation
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          console.log(entry);
+
+          // add `animate` class when the element enters our viewport
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+          } else {
+            entry.target.classList.remove("animate");
+          }
+        });
+      });
+
+      // grab all the element that want to be animated
+      // which in this case is the `<main>`, all the `<section>`, the `<footer>`, and all the projects
+      document
+        .querySelectorAll("main, section, footer, .project")
+        .forEach((el) => observer.observe(el));
     </script>
   </body>
 </html>

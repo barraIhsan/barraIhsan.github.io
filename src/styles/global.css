@@ -1,3 +1,24 @@
+/* Import tailwind classes */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+main,
+section,
+.project {
+  @apply opacity-0 motion-safe:translate-y-10 transition-[opacity,transform] duration-1000;
+}
+
+footer {
+  @apply opacity-0 transition-opacity duration-1000;
+}
+
+main.animate,
+section.animate,
+.project.animate {
+  @apply opacity-100 translate-y-0;
+}
+
+footer.animate {
+  @apply opacity-100;
+}
