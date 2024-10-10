@@ -70,7 +70,7 @@ let pathname = Astro.url.pathname;
     "z-50",
   ];
 
-  window.addEventListener("scroll", () => {
+  const updateNav = () => {
     scrollPos = window.scrollY;
     if (scrollPos <= 100) {
       nav.classList.add(...bigNav);
@@ -79,5 +79,11 @@ let pathname = Astro.url.pathname;
       nav.classList.add(...smallNav);
       nav.classList.remove(...bigNav);
     }
-  });
+  };
+
+  // run it when the web loaded for the first time
+  updateNav();
+
+  // and when the user scroll the webpages
+  window.addEventListener("scroll", () => updateNav());
 </script>
