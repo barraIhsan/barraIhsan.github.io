@@ -19,7 +19,7 @@ const { project } = Astro.props;
         >
           {
             project.stacks.map(({ Icon, name }) => (
-              <div class="p-1.5 lg:p-2 border border-gray-500 rounded-xl flex items-center gap-2 w-fit">
+              <div class="p-1.5 lg:p-2 border border-gray-600 rounded-xl flex items-center gap-2 w-fit">
                 <Icon class="size-4 lg:size-6" />
                 <span>{name}</span>
               </div>
@@ -38,7 +38,7 @@ const { project } = Astro.props;
   <div class=`${ project.small ? "sm:text-sm lg:text-lg lg:gap-3" : "sm:hidden" } text-xs flex flex-wrap gap-2 mt-5`>
     {
       project.stacks.map(({ Icon, name }) => (
-      <div class=`${project.small && "sm:p-2"} p-1.5 border border-gray-500 rounded-xl flex items-center gap-2 w-fit`>
+      <div class=`${project.small && "sm:p-2"} p-1.5 border border-gray-600 rounded-xl flex items-center gap-2 w-fit`>
           <Icon class=`${ project.small && "lg:size-5" } size-4` />
           <span>{name}</span>
         </div>
