@@ -23,7 +23,7 @@ let pathname = Astro.url.pathname;
       <li>
         <a
           href="/projects"
-          class={pathname == "/projects"
+          class={pathname.startsWith("/projects")
             ? "font-semibold"
             : "text-gray-500 transition-colors duration-300 hover:text-gray-300"}
           >Projects</a
@@ -32,7 +32,7 @@ let pathname = Astro.url.pathname;
       <li>
         <a
           href="/blogs"
-          class={pathname == "/blogs"
+          class={pathname.startsWith("/blogs")
             ? "font-semibold"
             : "text-gray-500 transition-colors duration-300 hover:text-gray-300"}
           >Blogs</a
