@@ -41,10 +41,10 @@ import { projects } from "../data/projects.js";
         .filter((project) => project.featured)
         .map((project) => <Projects project={project} />)
     }
-    <div class="flex justify-end mt-12">
+    <div class="flex justify-end mt-5 md:mt-12">
       <a
         href="/projects"
-        class="group relative flex justify-center items-center gap-5 rounded-2xl border border-gray-600 py-5 px-8 overflow-hidden transition-colors duration-300 hover:bg-gray-800"
+        class="group relative flex justify-center items-center gap-3 md:gap-5 rounded-2xl border border-gray-600 py-3 md:py-5 px-5 md:px-8 overflow-hidden transition-colors duration-300 hover:bg-gray-800"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ import { projects } from "../data/projects.js";
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="size-6 absolute -left-full transition-[left] duration-300 group-hover:left-8"
+          class="size-4 md:size-6 absolute -left-full transition-[left] duration-300 group-hover:left-4 md:group-hover:left-8"
         >
           <path
             stroke-linecap="round"
@@ -60,7 +60,7 @@ import { projects } from "../data/projects.js";
             d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
         </svg>
         <p
-          class="text-xl transition-transform duration-300 group-hover:translate-x-12"
+          class="md:text-xl transition-transform duration-300 group-hover:translate-x-7 md:group-hover:translate-x-12"
         >
           See all projects
         </p>
@@ -70,7 +70,7 @@ import { projects } from "../data/projects.js";
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="size-6 transition-transform duration-300 group-hover:translate-x-24"
+          class="size-4 md:size-6 transition-transform duration-300 group-hover:translate-x-12 md:group-hover:translate-x-24"
         >
           <path
             stroke-linecap="round"
