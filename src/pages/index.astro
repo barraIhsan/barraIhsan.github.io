@@ -86,14 +86,14 @@ import { projects } from "../data/projects.js";
       class="[--gap:1.5rem] py-4 overflow-hidden motion-safe:[mask:linear-gradient(90deg,transparent,white_20%,white_80%,transparent)] mt-4 md:mt-8"
     >
       <ul
-        class="flex gap-[--gap] text-lg xl:text-2xl w-max motion-reduce:flex-wrap motion-safe:animate-scroll hover:[animation-play-state:paused]"
+        class="flex gap-[--gap] text-lg xl:text-2xl motion-safe:w-max motion-reduce:flex-wrap motion-safe:animate-scroll hover:[animation-play-state:paused]"
       >
         {
           stacks
             .slice(0, 10)
             .concat(stacks.slice(0, 10))
-            .map(({ Icon, name }) => (
-              <li class="flex gap-4 items-center">
+            .map(({ Icon, name }, index) => (
+            <li class=`flex gap-4 items-center ${index >= 10 && "motion-reduce:hidden"}`>
                 <Icon class="size-6 xl:size-10" />
                 <span>{name}</span>
               </li>
@@ -105,14 +105,14 @@ import { projects } from "../data/projects.js";
       class="[--gap:1.5rem] [--duration:20s] [--direction:reverse] py-4 overflow-hidden motion-safe:[mask:linear-gradient(90deg,transparent,white_20%,white_80%,transparent)] md:mt-5"
     >
       <ul
-        class="flex gap-[--gap] text-lg xl:text-2xl w-max motion-reduce:flex-wrap motion-safe:animate-scroll hover:[animation-play-state:paused]"
+        class="flex gap-[--gap] text-lg xl:text-2xl motion-safe:w-max motion-reduce:flex-wrap motion-safe:animate-scroll hover:[animation-play-state:paused]"
       >
         {
           stacks
             .slice(10)
             .concat(stacks.slice(10))
-            .map(({ Icon, name }) => (
-              <li class="flex gap-4 items-center">
+            .map(({ Icon, name }, index) => (
+            <li class=`flex gap-4 items-center ${index >= stacks.slice(10).length && "motion-reduce:hidden"}`>
                 <Icon class="size-6 xl:size-10" />
                 <span>{name}</span>
               </li>
