@@ -27,5 +27,35 @@ import { schools } from "../data/schools.js";
       {schools.map((school) => <Projects project={school} />)}
     </div>
   </section>
+  <!-- TODO: remake the website -->
+  <section class="container mx-auto px-5 sm:px-12 mt-24">
+    <a href="https://barraihsan.kodeintekno.com/multimedia/" target="_blank">
+      <div
+        class="p-8 border border-gray-600 transition-colors duration-300 hover:bg-gray-800 rounded-xl flex justify-between items-center"
+      >
+        <div>
+          <p class="text-base sm:text-xl lg:text-3xl">
+            Looking for Design (Multimedia)?
+          </p>
+          <p class="text-xs sm:text-base lg:text-xl">
+            You can visit my other website here
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-8 md:size-12"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+        </svg>
+      </div>
+    </a>
+  </section>
   <Footer />
 </Layout>
