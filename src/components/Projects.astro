@@ -25,7 +25,7 @@ const { project } = Astro.props;
       }
     </div>
     <img
-      src={"/img/" + project.title.toLowerCase().replace(" ", "-") + ".png"}
+      src={"/img/" + project.title.toLowerCase().replaceAll(" ", "-") + ".png"}
       class="absolute inset-0 bg-black size-full object-cover sm:group-hover:scale-110 transition-transform duration-300 brightness-75 sm:brightness-100 sm:mask-image-gradient-to-t from-transparent to-transparent/60 to-70%"
     />
   </div>
