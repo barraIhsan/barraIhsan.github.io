@@ -5,6 +5,10 @@ import Footer from "../components/Footer.astro";
 import { stacks } from "../data/stacks.js";
 import Projects from "../components/Projects.astro";
 import { projects } from "../data/projects.js";
+
+// split the stacks into two
+let firstStacks = stacks.slice(0, 10);
+let secondStacks = stacks.slice(10);
 ---
 
 <Layout title="Barra Ihsan">
@@ -89,9 +93,8 @@ import { projects } from "../data/projects.js";
         class="flex gap-[--gap] text-lg xl:text-2xl motion-safe:w-max motion-reduce:flex-wrap motion-safe:animate-scroll hover:[animation-play-state:paused]"
       >
         {
-          stacks
-            .slice(0, 10)
-            .concat(stacks.slice(0, 10))
+          firstStacks
+            .concat(firstStacks)
             .map(({ Icon, name }, index) => (
             <li class=`flex gap-4 items-center ${index >= 10 && "motion-reduce:hidden"}`>
                 <Icon class="size-6 xl:size-10" />
@@ -108,11 +111,10 @@ import { projects } from "../data/projects.js";
         class="flex gap-[--gap] text-lg xl:text-2xl motion-safe:w-max motion-reduce:flex-wrap motion-safe:animate-scroll hover:[animation-play-state:paused]"
       >
         {
-          stacks
-            .slice(10)
-            .concat(stacks.slice(10))
+          secondStacks
+            .concat(secondStacks)
             .map(({ Icon, name }, index) => (
-            <li class=`flex gap-4 items-center ${index >= stacks.slice(10).length && "motion-reduce:hidden"}`>
+            <li class=`flex gap-4 items-center ${index >= secondStacks.length && "motion-reduce:hidden"}`>
                 <Icon class="size-6 xl:size-10" />
                 <span>{name}</span>
               </li>
