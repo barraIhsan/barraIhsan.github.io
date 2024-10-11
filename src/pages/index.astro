@@ -73,7 +73,7 @@ let secondStacks = stacks.slice(10);
           firstStacks
             .concat(firstStacks)
             .map(({ Icon, name }, index) => (
-            <li class=`flex gap-4 items-center ${index >= 10 && "motion-reduce:hidden"}`>
+            <li class=`flex gap-4 items-center ${index >= firstStacks.length && "motion-reduce:hidden"}`>
                 <Icon class="size-6 xl:size-10" />
                 <span>{name}</span>
               </li>
