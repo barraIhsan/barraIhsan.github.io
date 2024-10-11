@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import Projects from "../components/Projects.astro";
 import { projects } from "../data/projects.js";
 import { schools } from "../data/schools.js";
+import ArrowRight from "../components/ArrowRight.astro";
 ---
 
 <Layout title="My Projects - Barra Ihsan">
@@ -41,19 +42,7 @@ import { schools } from "../data/schools.js";
             You can visit my other website here
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-8 md:size-12"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
-        </svg>
+        <ArrowRight class="size-8 md:size-12" />
       </div>
     </a>
   </section>
