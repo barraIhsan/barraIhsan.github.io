@@ -30,6 +30,14 @@ import "../styles/global.css";
       rel="stylesheet"
     />
 
+    <!-- RSS auto discovery -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Barra Ihsan"
+      href={new URL("rss.xml", Astro.site)}
+    />
+
     <!-- Twemoji -->
     <script
       is:inline
