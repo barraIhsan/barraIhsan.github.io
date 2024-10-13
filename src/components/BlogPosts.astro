@@ -23,7 +23,7 @@ const formattedDate = new Intl.DateTimeFormat("en-GB", {
     </div>
     <time
       datetime={pubDate.toISOString().slice(0, 10)}
-      class="text-sm md:text-base">{formattedDate}</time
+      class="shrink-0 text-sm md:text-base">{formattedDate}</time
     >
   </a>
 </li>
