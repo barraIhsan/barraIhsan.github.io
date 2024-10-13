@@ -1,0 +1,28 @@
+---
+const { url, title, desc, pubDate } = Astro.props;
+
+// format date
+const date = new Date(pubDate);
+
+// dd mmm yyyy for user
+const formattedDate = new Intl.DateTimeFormat("en-GB", {
+  day: "2-digit",
+  month: "short",
+  year: "numeric",
+}).format(date);
+---
+
+<li>
+  <a
+    href={url}
+    class="flex md:flex-row flex-col-reverse gap-2 justify-between p-5 border border-gray-600 rounded-xl transition-colors duration-300 hover:bg-gray-800"
+  >
+    <div>
+      <h2 class="text-lg md:text-2xl font-bold md:mb-2">{title}</h2>
+      <p class="text-base md:text-lg">{desc}</p>
+    </div>
+    <time datetime={pubDate.slice(0, 10)} class="text-sm md:text-base"
+      >{formattedDate}</time
+    >
+  </a>
+</li>

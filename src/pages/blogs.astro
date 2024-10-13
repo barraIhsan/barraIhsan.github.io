@@ -2,13 +2,59 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+
+// blog posts list
+import BlogPosts from "../components/BlogPosts.astro";
+
+interface Blog {
+  url: String;
+  frontmatter: {
+    layout: String;
+    title: String;
+    desc: String;
+    pubDate: String;
+  };
+}
+
+// rss feed logo
+import { Rss } from "simple-icons-astro";
+
+// all blog posts
+let blogPosts: Blog[];
+
+try {
+  blogPosts = await Astro.glob("./blogs/*.mdx");
+} catch (error) {
+  blogPosts = [];
+}
 ---
 
 <Layout title="My blog posts - Barra Ihsan">
   <Navbar />
   <main class="container mx-auto px-5 sm:px-12 mt-32 md:mt-60">
-    <h1 class="text-2xl md:text-5xl font-extrabold">Blogs</h1>
+    <h1
+      class="text-2xl md:text-5xl font-extrabold inline-flex gap-[.75em] items-center"
+    >
+      Blog Posts
+      <a href="/rss.xml"><Rss class="size-[.75em]" /></a>
+    </h1>
     <p class="text-sm md:text-lg lg:text-xl mt-2">These are my blog posts</p>
   </main>
+  <section class="container mx-auto px-5 sm:px-12 mt-12">
+    <ul class="flex flex-col gap-5">
+      {
+        blogPosts.length > 0
+          ? blogPosts.map((blog) => (
+              <BlogPosts
+                url={blog.url}
+                title={blog.frontmatter.title}
+                desc={blog.frontmatter.desc}
+                pubDate={blog.frontmatter.pubDate}
+              />
+            ))
+          : "No blog posts have been written"
+      }
+    </ul>
+  </section>
   <Footer />
 </Layout>

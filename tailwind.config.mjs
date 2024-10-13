@@ -19,5 +19,8 @@ export default {
       },
     },
   },
-  plugins: [require("@lostisworld/tailwind-mask")],
+  plugins: [
+    require("@lostisworld/tailwind-mask"),
+    require("@tailwindcss/typography"),
+  ],
 };

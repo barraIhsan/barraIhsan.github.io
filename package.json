@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^3.1.8",
     "@astrojs/tailwind": "^5.1.0",
     "@lostisworld/tailwind-mask": "^1.0.1",
     "astro": "^4.10.1",
@@ -19,6 +20,7 @@
     "typescript": "^5.5.4"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1"
   }
