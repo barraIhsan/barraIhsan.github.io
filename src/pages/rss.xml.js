@@ -21,5 +21,6 @@ export async function GET(context) {
       }),
     })),
     customData: `<language>en-US</language>`,
+    stylesheet: "/rss/styles.xsl",
   });
 }
