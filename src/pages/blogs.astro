@@ -4,26 +4,17 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
 // blog posts list
+import { getCollection, type CollectionEntry } from "astro:content";
 import BlogPosts from "../components/BlogPosts.astro";
-
-interface Blog {
-  url: String;
-  frontmatter: {
-    layout: String;
-    title: String;
-    desc: String;
-    pubDate: String;
-  };
-}
 
 // rss feed logo
 import { Rss } from "simple-icons-astro";
 
 // all blog posts
-let blogPosts: Blog[];
+let blogPosts: CollectionEntry<"blogs">[];
 
 try {
-  blogPosts = await Astro.glob("./blogs/*.mdx");
+  blogPosts = await getCollection("blogs");
 } catch (error) {
   blogPosts = [];
 }
@@ -46,10 +37,10 @@ try {
         blogPosts.length > 0
           ? blogPosts.map((blog) => (
               <BlogPosts
-                url={blog.url}
-                title={blog.frontmatter.title}
-                desc={blog.frontmatter.desc}
-                pubDate={blog.frontmatter.pubDate}
+                url={`/blogs/${blog.slug}`}
+                title={blog.data.title}
+                desc={blog.data.desc}
+                pubDate={blog.data.pubDate}
               />
             ))
           : "No blog posts have been written"

@@ -21,8 +21,9 @@ const formattedDate = new Intl.DateTimeFormat("en-GB", {
       <h2 class="text-lg md:text-2xl font-bold md:mb-2">{title}</h2>
       <p class="text-base md:text-lg">{desc}</p>
     </div>
-    <time datetime={pubDate.slice(0, 10)} class="text-sm md:text-base"
-      >{formattedDate}</time
+    <time
+      datetime={pubDate.toISOString().slice(0, 10)}
+      class="text-sm md:text-base">{formattedDate}</time
     >
   </a>
 </li>
