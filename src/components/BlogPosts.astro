@@ -1,15 +1,14 @@
 ---
 const { url, title, desc, pubDate } = Astro.props;
 
-// format date
-const date = new Date(pubDate);
-
-// dd mmm yyyy for user
-const formattedDate = new Intl.DateTimeFormat("en-GB", {
+// remove time for datetime
+const date = pubDate.toISOString().slice(0, 10);
+// format date dd mmm yyyy for user
+const formattedDate = Intl.DateTimeFormat("en-GB", {
   day: "2-digit",
   month: "short",
   year: "numeric",
-}).format(date);
+}).format(new Date(pubDate));
 ---
 
 <li>
@@ -21,9 +20,8 @@ const formattedDate = new Intl.DateTimeFormat("en-GB", {
       <h2 class="text-lg md:text-2xl font-bold md:mb-2">{title}</h2>
       <p class="text-base md:text-lg">{desc}</p>
     </div>
-    <time
-      datetime={pubDate.toISOString().slice(0, 10)}
-      class="shrink-0 text-sm md:text-base">{formattedDate}</time
+    <time datetime={date} class="shrink-0 text-sm md:text-base"
+      >{formattedDate}</time
     >
   </a>
 </li>
