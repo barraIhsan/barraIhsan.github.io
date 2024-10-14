@@ -30,7 +30,9 @@ const formattedDate = Intl.DateTimeFormat("en-GB", {
 <Layout title="My blog posts - Barra Ihsan">
   <Navbar />
   <main class="px-5 mt:px-12 mt-32 md:mt-60">
-    <article class="prose mx-auto prose-invert md:prose-lg lg:prose-xl">
+    <article
+      class="prose mx-auto prose-invert prose-sm sm:prose-base md:prose-lg lg:prose-xl max-w-[100ch]"
+    >
       <header>
         <em>Published <time datetime={date}>{formattedDate}</time></em>
         <h1>{entry.data.title}</h1>
