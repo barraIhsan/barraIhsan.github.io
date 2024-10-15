@@ -27,7 +27,7 @@ const formattedDate = Intl.DateTimeFormat("en-GB", {
 }).format(new Date(entry.data.pubDate));
 ---
 
-<Layout title="My blog posts - Barra Ihsan">
+<Layout title={entry.data.title} desc={entry.data.desc}>
   <Navbar />
   <main class="px-5 md:px-12 mt-32 md:mt-60">
     <article
