@@ -72,7 +72,7 @@ let pathname = Astro.url.pathname;
 
   const updateNav = () => {
     scrollPos = window.scrollY;
-    if (scrollPos <= 100) {
+    if (scrollPos <= 0) {
       nav?.classList.add(...bigNav);
       nav?.classList.remove(...smallNav);
     } else {
