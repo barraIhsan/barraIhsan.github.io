@@ -2,8 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-
-let pathname = new URL(Astro.request.url).pathname;
 ---
 
 <Layout title="404 Not Found">
@@ -15,26 +13,11 @@ let pathname = new URL(Astro.request.url).pathname;
     <p class="max-w-[45ch] text-lg md:text-2xl">
       The page you're looking for might be removed or is temporarily unavailable
     </p>
-    <p>{pathname}</p>
-    <div
-      class="flex flex-col md:flex-row gap-5 md:gap-12 justify-center mt-10 text-base md:text-xl"
+    <a
+      href="/"
+      class="mt-10 text-base md:text-xl px-6 py-3 md:py-4 rounded-xl border border-gray-600 transition-colors duration-300 hover:bg-gray-800"
+      >Go back home</a
     >
-      {
-        pathname.startsWith("/blogs") && (
-          <a
-            href="/blogs"
-            class="px-6 py-3 md:py-4 rounded-xl border border-gray-600 transition-colors duration-300 hover:bg-gray-800"
-          >
-            Go back to Blogs
-          </a>
-        )
-      }
-      <a
-        href="/"
-        class="px-6 py-3 md:py-4 rounded-xl border border-gray-600 transition-colors duration-300 hover:bg-gray-800"
-        >Go back home</a
-      >
-    </div>
   </section>
   <Footer />
 </Layout>
