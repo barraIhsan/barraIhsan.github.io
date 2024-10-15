@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
-let pathname = Astro.url.pathname;
+let pathname = new URL(Astro.request.url).pathname;
 ---
 
 <Layout title="404 Not Found">
