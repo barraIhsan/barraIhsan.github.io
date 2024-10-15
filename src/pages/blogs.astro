@@ -40,14 +40,18 @@ try {
     <ul class="flex flex-col gap-5">
       {
         blogPosts.length > 0
-          ? blogPosts.map((blog) => (
-              <BlogPosts
-                url={`/blog/${blog.slug}`}
-                title={blog.data.title}
-                desc={blog.data.desc}
-                pubDate={blog.data.pubDate}
-              />
-            ))
+          ? blogPosts
+              .sort(
+                (a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate),
+              )
+              .map((blog) => (
+                <BlogPosts
+                  url={`/blog/${blog.slug}`}
+                  title={blog.data.title}
+                  desc={blog.data.desc}
+                  pubDate={blog.data.pubDate}
+                />
+              ))
           : "No blog posts have been written"
       }
     </ul>
