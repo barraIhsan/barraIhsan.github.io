@@ -14,6 +14,7 @@
     "@astrojs/rss": "^4.0.8",
     "@astrojs/sitemap": "^3.2.0",
     "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/ts-plugin": "^1.10.2",
     "@iconify-json/heroicons": "^1.2.1",
     "@iconify-json/simple-icons": "^1.2.8",
     "@lostisworld/tailwind-mask": "^1.0.1",
