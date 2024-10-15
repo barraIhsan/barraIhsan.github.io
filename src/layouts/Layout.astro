@@ -64,8 +64,6 @@ import "../styles/global.css";
       // scroll-driven animation
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          console.log(entry);
-
           // add `animate` class when the element enters our viewport
           if (entry.isIntersecting) {
             entry.target.classList.add("animate");
