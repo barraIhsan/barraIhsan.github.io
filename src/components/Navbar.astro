@@ -5,7 +5,7 @@ let pathname = Astro.url.pathname;
 ---
 
 <nav
-  class="fixed inset-x-0 top-0 py-8 md:py-16 motion-safe:transition-[padding] motion-safe:duration-500"
+  class="fixed inset-x-0 top-0 py-8 md:py-16 motion-safe:transition-[padding] motion-safe:duration-500 z-50"
 >
   <div
     class="container mx-auto flex justify-between items-center px-5 sm:px-12"
@@ -96,13 +96,7 @@ let pathname = Astro.url.pathname;
 
   let bigNav = ["py-8", "md:py-16"];
 
-  let smallNav = [
-    "py-4",
-    "md:py-6",
-    "bg-gray-900/70",
-    "backdrop-blur-lg",
-    "z-50",
-  ];
+  let smallNav = ["py-4", "md:py-6", "bg-gray-900/70", "backdrop-blur-lg"];
 
   const updateNav = () => {
     scrollPos = window.scrollY;
