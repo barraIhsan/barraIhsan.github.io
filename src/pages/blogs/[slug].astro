@@ -13,9 +13,9 @@ export async function getStaticPaths() {
 const { entry }: { entry: CollectionEntry<"blogs"> } = Astro.props;
 const { Content } = await entry.render();
 
-import Layout from "../../layouts/Layout.astro";
-import Navbar from "../../components/Navbar.astro";
-import Footer from "../../components/Footer.astro";
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/Navbar.astro";
+import Footer from "@components/Footer.astro";
 
 // remove time for datetime
 const date = entry.data.pubDate.toISOString().slice(0, 10);
