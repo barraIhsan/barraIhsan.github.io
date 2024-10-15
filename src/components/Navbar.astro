@@ -59,34 +59,6 @@ let pathname = Astro.url.pathname;
           />
         </a>
       </li>
-      <li class="relative">
-        <button id="lang" class="block">
-          <Icon
-            name="heroicons:language"
-            class="size-5 md:size-8 text-gray-50 transition-colors hover:text-gray-300"
-          />
-        </button>
-        <!-- language switcher popup -->
-        <ul
-          class="absolute right-0 top-[200%] bg-gray-800 rounded-lg w-max text-lg md:text-xl overflow-hidden transition-[opacity,transform] duration-300 ease-out -translate-y-2 invisible"
-          id="langPopup"
-        >
-          <li>
-            <button
-              class="py-2 md:py-3 px-5 md:px-8 transition-colors duration-300 hover:bg-gray-700 font-semibold text-blue-300 w-full text-left"
-            >
-              🇺🇸 English
-            </button>
-          </li>
-          <li>
-            <button
-              class="py-2 md:py-3 px-5 md:px-8 transition-colors duration-300 hover:bg-gray-700 w-full text-left"
-            >
-              🇮🇩 Bahasa Indonesia
-            </button>
-          </li>
-        </ul>
-      </li>
     </ul>
   </div>
 </nav>
@@ -116,20 +88,4 @@ let pathname = Astro.url.pathname;
 
   // and when the user scroll the webpages
   window.addEventListener("scroll", () => updateNav());
-
-  // lang switcher popup
-  const lang = document.querySelector("#lang");
-  const langPopup = document.querySelector("#langPopup");
-
-  const enter = ["visible", "translate-y-0", "active"];
-  const leave = ["invisible", "-translate-y-2"];
-  lang?.addEventListener("click", () => {
-    if (langPopup?.classList.contains("active")) {
-      langPopup?.classList.remove(...enter);
-      langPopup?.classList.add(...leave);
-    } else {
-      langPopup?.classList.add(...enter);
-      langPopup?.classList.remove(...leave);
-    }
-  });
 </script>
