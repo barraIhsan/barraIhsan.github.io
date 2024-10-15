@@ -1,6 +1,6 @@
 ---
-import { Github } from "simple-icons-astro";
-import Twitter from "../components/Twitter.astro";
+import { Icon } from "astro-icon/components";
+
 let pathname = Astro.url.pathname;
 ---
 
@@ -42,13 +42,15 @@ let pathname = Astro.url.pathname;
     </ul>
     <div class="flex gap-4 md:gap-8">
       <a href="https://github.com/barraIhsan" target="_blank">
-        <Github
+        <Icon
+          name="simple-icons:github"
           class="size-5 md:size-8 fill-gray-50 transition-colors hover:fill-gray-300"
         />
       </a>
 
       <a href="https://twitter.com/barrsan_" target="_blank">
-        <Twitter
+        <Icon
+          name="twitter"
           class="size-5 md:size-8 fill-gray-50 transition-colors hover:fill-gray-300"
         />
       </a>

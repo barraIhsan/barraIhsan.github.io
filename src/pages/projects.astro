@@ -3,9 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Projects from "../components/Projects.astro";
+
 import { projects } from "../data/projects.js";
 import { schools } from "../data/schools.js";
-import ArrowRight from "../components/ArrowRight.astro";
+
+import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="My Projects - Barra Ihsan">
@@ -42,7 +44,7 @@ import ArrowRight from "../components/ArrowRight.astro";
             You can visit my other website here
           </p>
         </div>
-        <ArrowRight class="size-8 md:size-12" />
+        <Icon name="heroicons:arrow-right" class="size-8 md:size-12" />
       </div>
     </a>
   </section>

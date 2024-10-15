@@ -2,10 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import { stacks } from "../data/stacks.js";
 import Projects from "../components/Projects.astro";
+import { stacks } from "../data/stacks.js";
 import { projects } from "../data/projects.js";
-import ArrowRight from "../components/ArrowRight.astro";
+
+import { Icon } from "astro-icon/components";
 
 // split the stacks into two
 let firstStacks = stacks.slice(0, 9);
@@ -51,13 +52,13 @@ let secondStacks = stacks.slice(9);
         href="/projects"
         class="group relative flex justify-center items-center gap-3 md:gap-5 rounded-2xl border border-gray-600 py-3 md:py-5 px-5 md:px-8 overflow-hidden transition-colors duration-300 hover:bg-gray-800"
       >
-        <ArrowRight class="size-4 md:size-6 absolute -left-full motion-safe:transition-[left] motion-safe:duration-300 group-hover:left-4 md:group-hover:left-8" />
+        <Icon name="heroicons:arrow-right" class="size-4 md:size-6 absolute -left-full motion-safe:transition-[left] motion-safe:duration-300 group-hover:left-4 md:group-hover:left-8" />
         <p
           class="md:text-xl motion-safe:transition-transform motion-safe:duration-300 group-hover:translate-x-7 md:group-hover:translate-x-12"
         >
           See all projects
         </p>
-        <ArrowRight class="size-4 md:size-6 motion-safe:transition-transform motion-safe:duration-300 group-hover:translate-x-12 md:group-hover:translate-x-24" />
+        <Icon name="heroicons:arrow-right" class="size-4 md:size-6 motion-safe:transition-transform motion-safe:duration-300 group-hover:translate-x-12 md:group-hover:translate-x-24" />
       </a>
     </div>
   </section>
@@ -72,9 +73,9 @@ let secondStacks = stacks.slice(9);
         {
           firstStacks
             .concat(firstStacks)
-            .map(({ Icon, name }, index) => (
-            <li class=`flex gap-4 items-center ${index >= firstStacks.length && "motion-reduce:hidden"}`>
-                <Icon class="size-6 xl:size-10" />
+            .map(({ icon, name }, index) => (
+              <li class=`flex gap-4 items-center ${index >= firstStacks.length && "motion-reduce:hidden"}`>
+                <Icon name={"simple-icons:" + icon} class="size-6 xl:size-10" />
                 <span>{name}</span>
               </li>
             ))
@@ -90,9 +91,9 @@ let secondStacks = stacks.slice(9);
         {
           secondStacks
             .concat(secondStacks)
-            .map(({ Icon, name }, index) => (
-            <li class=`flex gap-4 items-center ${index >= secondStacks.length && "motion-reduce:hidden"}`>
-                <Icon class="size-6 xl:size-10" />
+            .map(({ icon, name }, index) => (
+              <li class=`flex gap-4 items-center ${index >= secondStacks.length && "motion-reduce:hidden"}`>
+                <Icon name={"simple-icons:" + icon} class="size-6 xl:size-10" />
                 <span>{name}</span>
               </li>
             ))

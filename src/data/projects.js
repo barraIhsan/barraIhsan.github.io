@@ -1,4 +1,3 @@
-import * as Icons from "simple-icons-astro";
 export const projects = [
   {
     title: "AviaVentura",
@@ -7,19 +6,19 @@ export const projects = [
     featured: true,
     stacks: [
       {
-        Icon: Icons.Astro,
+        icon: "astro",
         name: "Astro",
       },
       {
-        Icon: Icons.Tailwindcss,
+        icon: "tailwindcss",
         name: "Tailwind",
       },
       {
-        Icon: Icons.Typescript,
+        icon: "typescript",
         name: "Typescript",
       },
       {
-        Icon: Icons.Sanity,
+        icon: "sanity",
         name: "Sanity",
       },
     ],

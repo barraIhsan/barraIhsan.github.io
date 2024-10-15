@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components"
 const { project } = Astro.props;
 ---
 
@@ -18,9 +19,9 @@ const { project } = Astro.props;
           class="hidden sm:flex flex-wrap gap-2 lg:gap-3 z-10 mt-2 text-sm lg:text-lg"
         >
           {
-            project.stacks.map(({ Icon, name }) => (
+            project.stacks.map(({ icon, name }) => (
               <div class="p-1.5 lg:p-2 border border-gray-600 rounded-xl flex items-center gap-2 w-fit">
-                <Icon class="size-4 lg:size-6" />
+                <Icon name={"simple-icons:" + icon} class="size-4 lg:size-6" />
                 <span>{name}</span>
               </div>
             ))
@@ -37,9 +38,9 @@ const { project } = Astro.props;
   </a>
   <div class=`${ project.small ? "sm:text-sm lg:text-lg lg:gap-3" : "sm:hidden" } text-xs flex flex-wrap gap-2 mt-5`>
     {
-      project.stacks.map(({ Icon, name }) => (
-      <div class=`${project.small && "sm:p-2"} p-1.5 border border-gray-600 rounded-xl flex items-center gap-2 w-fit`>
-          <Icon class=`${ project.small && "lg:size-5" } size-4` />
+      project.stacks.map(({ icon, name }) => (
+        <div class=`${project.small && "sm:p-2"} p-1.5 border border-gray-600 rounded-xl flex items-center gap-2 w-fit`>
+          <Icon name={"simple-icons:" + icon} class=`${ project.small && "lg:size-5" } size-4` />
           <span>{name}</span>
         </div>
       ))

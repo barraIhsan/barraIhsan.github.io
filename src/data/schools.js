@@ -1,4 +1,3 @@
-import * as Icons from "simple-icons-astro";
 export const schools = [
   {
     title: "Weekly Assignment 1",
@@ -7,7 +6,7 @@ export const schools = [
     small: true,
     stacks: [
       {
-        Icon: Icons.Html5,
+        icon: "html5",
         name: "HTML",
       },
     ],
@@ -19,11 +18,11 @@ export const schools = [
     small: true,
     stacks: [
       {
-        Icon: Icons.Html5,
+        icon: "html5",
         name: "HTML",
       },
       {
-        Icon: Icons.Css3,
+        icon: "css3",
         name: "CSS",
       },
     ],
@@ -35,11 +34,11 @@ export const schools = [
     small: true,
     stacks: [
       {
-        Icon: Icons.Html5,
+        icon: "html5",
         name: "HTML",
       },
       {
-        Icon: Icons.Css3,
+        icon: "css3",
         name: "CSS",
       },
     ],
@@ -51,15 +50,15 @@ export const schools = [
     small: true,
     stacks: [
       {
-        Icon: Icons.Html5,
+        icon: "html5",
         name: "HTML",
       },
       {
-        Icon: Icons.Css3,
+        icon: "css3",
         name: "CSS",
       },
       {
-        Icon: Icons.Bootstrap,
+        icon: "bootstrap",
         name: "Bootstrap",
       },
     ],
@@ -71,11 +70,11 @@ export const schools = [
     small: true,
     stacks: [
       {
-        Icon: Icons.Html5,
+        icon: "html5",
         name: "HTML",
       },
       {
-        Icon: Icons.Css3,
+        icon: "css3",
         name: "CSS",
       },
     ],
@@ -87,11 +86,11 @@ export const schools = [
     small: true,
     stacks: [
       {
-        Icon: Icons.Html5,
+        icon: "html5",
         name: "HTML",
       },
       {
-        Icon: Icons.Css3,
+        icon: "css3",
         name: "CSS",
       },
     ],
@@ -103,11 +102,11 @@ export const schools = [
     small: true,
     stacks: [
       {
-        Icon: Icons.Html5,
+        icon: "html5",
         name: "HTML",
       },
       {
-        Icon: Icons.Css3,
+        icon: "css3",
         name: "CSS",
       },
     ],
@@ -119,15 +118,15 @@ export const schools = [
     small: true,
     stacks: [
       {
-        Icon: Icons.Html5,
+        icon: "html5",
         name: "HTML",
       },
       {
-        Icon: Icons.Css3,
+        icon: "css3",
         name: "CSS",
       },
       {
-        Icon: Icons.Bootstrap,
+        icon: "bootstrap",
         name: "Bootstrap",
       },
     ],
