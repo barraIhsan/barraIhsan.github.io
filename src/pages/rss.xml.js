@@ -15,7 +15,7 @@ export async function GET(context) {
       title: blog.data.title,
       description: blog.data.desc,
       pubDate: blog.data.pubDate,
-      link: `/blogs/${blog.slug}`,
+      link: `/blog/${blog.slug}`,
       content: sanitizeHtml(parser.render(blog.body), {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img", "h2"]),
       }),
