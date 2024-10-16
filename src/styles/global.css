@@ -8,6 +8,11 @@ img.twemoji {
   @apply inline size-[1em] align-[-0.1em] select-none;
 }
 
+/* Dont apply margin when twemoji inside prose (tailwind typography) */
+.prose img.twemoji {
+  @apply m-0;
+}
+
 /* Scroll-driven animate */
 main,
 section,
