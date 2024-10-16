@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Twemoji */
+img.twemoji {
+  @apply inline size-[1em] align-[-0.1em] select-none;
+}
+
+/* Scroll-driven animate */
 main,
 section,
 .project {
