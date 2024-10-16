@@ -42,13 +42,30 @@ export default {
             "blockquote p:last-of-type::after": {
               content: "",
             },
-            // hover and already visited link style
+            // visited link color & hover effect
             "a:hover": {
-              color: theme("colors.gray.300"),
+              textDecorationThickness: "1.3px",
             },
             ":not(sup) > a:visited": {
-              color: theme("colors.gray.400"),
+              color: "var(--tw-prose-invert-links-visited)",
             },
+            // slighly more thick strikethrough
+            del: {
+              textDecorationThickness: "1.5px",
+            },
+          },
+        },
+        cyan: {
+          css: {
+            // white -> gray.50
+            "--tw-prose-invert-headings": theme("colors.gray[50]"),
+            "--tw-prose-invert-bold": theme("colors.gray[50]"),
+            "--tw-prose-invert-kbd": theme("colors.gray[50]"),
+            "--tw-prose-invert-code": theme("colors.gray[50]"),
+
+            // links -> cyan
+            "--tw-prose-invert-links": theme("colors.cyan[500]"),
+            "--tw-prose-invert-links-visited": theme("colors.cyan[600]"),
           },
         },
       }),
