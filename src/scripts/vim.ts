@@ -32,7 +32,7 @@ function echoVimCmd(
   vimCmd: HTMLParagraphElement,
 ) {
   if (error) vimCmd.classList.add(...vimCmdError);
-  vimCmd.innerHTML = text; // using `innerHTML` here, so we can
+  vimCmd.innerHTML = text; // using `innerHTML` here, so we can put links / html tag
   vimCmdAllowInput = false;
   vimCmd.classList.remove(...vimCmdAllowInputClass);
 }
