@@ -7,6 +7,10 @@ const vimCmdRight: Array<string> = ["text-right"];
 const vimCmdAllowInputClass: Array<string> = ["after:content-['█']"];
 const vimCmdError: Array<string> = ["italic", "text-red-400"];
 
+// get pathname and delete the last `/` if it exists
+// and if it's root (`/`) just return back the `/`
+const pathname = window.location.pathname.replace(/\/$/, "") || "/";
+
 function enterVimCmd(vimCmd: HTMLParagraphElement, readOnly: Boolean = false) {
   vimCmdActive = true;
   vimCmd.textContent = "";
@@ -111,8 +115,6 @@ function executeVimCmd(vimCmd: HTMLParagraphElement) {
   } else if (commands[0].startsWith("!")) {
     echoVimCmd(`Running shell command won't be supported`, true, vimCmd);
   } else if (fileCmd.includes(commands[0])) {
-    // get pathname
-    const pathname = window.location.pathname;
     // get scroll percentage
     const pct = (
       (window.scrollY /
@@ -130,12 +132,7 @@ function executeVimCmd(vimCmd: HTMLParagraphElement) {
         vimCmd,
       );
     } else {
-      echoVimCmd(
-        // cut the last `/` at pathname if exist
-        `"src/pages${(pathname.endsWith("/") && pathname.slice(0, -1)) || pathname}.astro" --${pct}%--`,
-        false,
-        vimCmd,
-      );
+      echoVimCmd(`"src/pages${pathname}.astro" --${pct}%--`, false, vimCmd);
     }
   } else if (editCmd.includes(commands[0])) {
     // home
@@ -187,6 +184,15 @@ function scroll(amount: number) {
 }
 
 const vimCmd = document.querySelector("#vimCmd") as HTMLParagraphElement;
+
+// for navigating blogs with j and k
+// get all the `a` tag in blogs
+const blogs = document.querySelectorAll(
+  "#blogs li a",
+) as NodeListOf<HTMLAnchorElement>;
+// set the pointer initially at -1
+let blogsPointer: number = -1;
+
 window.addEventListener("keydown", (e) => {
   // vim cmd
   if (!vimCmdActive || !vimCmdAllowInput) {
@@ -214,12 +220,27 @@ window.addEventListener("keydown", (e) => {
     if (e.key == "Escape" || (e.key == "[" && e.ctrlKey)) {
       exitVimCmd(vimCmd);
     }
-    // vim motion
-    else if (e.key == "j") {
-      scroll(200);
-    } else if (e.key == "k") {
-      scroll(-200);
-    } else if (e.key == "d" && e.ctrlKey) {
+
+    // vim motion (j and k)
+    if (pathname == "/blogs") {
+      // move the pointer
+      if (e.key == "j") blogsPointer++;
+      else if (e.key == "k") blogsPointer--;
+
+      // focus on the blog
+      // loopback if exceeded
+      if (blogsPointer == blogs.length) blogsPointer = 0;
+      else if (blogsPointer < 0) blogsPointer = blogs.length - 1;
+
+      blogs[blogsPointer].focus();
+    } else {
+      // if it's not in blogs, just scroll
+      if (e.key == "j") scroll(200);
+      else if (e.key == "k") scroll(-200);
+    }
+
+    // vim motion (the rest)
+    if (e.key == "d" && e.ctrlKey) {
       scroll(700);
       e.preventDefault();
     } else if (e.key == "u" && e.ctrlKey) {
