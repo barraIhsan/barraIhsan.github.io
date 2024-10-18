@@ -51,6 +51,15 @@ import "@styles/global.css";
   <body class="bg-gray-900 text-gray-50 font-mono">
     <slot />
 
+    <!-- "vim" mode -->
+    <p
+      class="fixed bottom-0 inset-x-0 bg-gray-900 py-2 text-base md:text-xl hidden container mx-auto font-semibold"
+      id="vimCmd"
+    >
+      :
+    </p>
+    <script src="@scripts/vim"></script>
+
     <script>
       // parse unicode emoji into twemoji
       twemoji.parse(document.body, {
