@@ -222,7 +222,7 @@ window.addEventListener("keydown", (e) => {
     }
 
     // vim motion (j and k)
-    if (pathname == "/blogs") {
+    if (pathname == "/blogs" && blogs.length > 0) {
       // move the pointer
       if (e.key == "j") blogsPointer++;
       else if (e.key == "k") blogsPointer--;
