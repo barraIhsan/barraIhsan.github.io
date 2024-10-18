@@ -1,16 +1,20 @@
 let vimCmdActive: Boolean = false;
 let vimCmdAllowInput: Boolean = false;
+let vimCmdWaitNextInput: Boolean = false;
 
 const vimCmdHidden: Array<string> = ["hidden"];
+const vimCmdRight: Array<string> = ["text-right"];
 const vimCmdAllowInputClass: Array<string> = ["after:content-['█']"];
 const vimCmdError: Array<string> = ["italic", "text-red-400"];
 
-function enterVimCmd(vimCmd: HTMLParagraphElement) {
+function enterVimCmd(vimCmd: HTMLParagraphElement, readOnly: Boolean = false) {
   vimCmdActive = true;
-  vimCmdAllowInput = true;
   vimCmd.textContent = "";
-  vimCmd.classList.remove(...vimCmdHidden, ...vimCmdError);
-  vimCmd.classList.add(...vimCmdAllowInputClass);
+  vimCmd.classList.remove(...vimCmdHidden, ...vimCmdError, ...vimCmdRight);
+  if (!readOnly) {
+    vimCmdAllowInput = true;
+    vimCmd.classList.add(...vimCmdAllowInputClass);
+  }
 }
 
 function exitVimCmd(vimCmd: HTMLParagraphElement) {
@@ -30,8 +34,15 @@ function echoVimCmd(
   text: string,
   error: Boolean,
   vimCmd: HTMLParagraphElement,
+  right: Boolean = false,
 ) {
+  // enter vim cmd mode with readonly
+  // just incase it's not active
+  // and clear the right text and error
+  enterVimCmd(vimCmd, true);
+
   if (error) vimCmd.classList.add(...vimCmdError);
+  if (right) vimCmd.classList.add(...vimCmdRight);
   vimCmd.innerHTML = text; // using `innerHTML` here, so we can put links / html tag
   vimCmdAllowInput = false;
   vimCmd.classList.remove(...vimCmdAllowInputClass);
@@ -166,13 +177,56 @@ function executeVimCmd(vimCmd: HTMLParagraphElement) {
   }
 }
 
+function scroll(amount: number) {
+  // if the amount is 0, it will scroll to the top
+  // else, it will "add" to the scroll
+  window.scrollTo({
+    top: parseInt(`${amount == 0 ? 0 : window.scrollY + amount}`),
+    behavior: "smooth",
+  });
+}
+
 const vimCmd = document.querySelector("#vimCmd") as HTMLParagraphElement;
 window.addEventListener("keydown", (e) => {
-  if ((!vimCmdActive || !vimCmdAllowInput) && e.key == ":") enterVimCmd(vimCmd);
+  // vim cmd
+  if (!vimCmdActive || !vimCmdAllowInput) {
+    if (e.key == ":") enterVimCmd(vimCmd);
+
+    // pressing g once, will display `g` in the bottom right
+    // pressing g again, will clear the displayed `g` and scroll to the top
+    // if g is pressed once and not pressed again,
+    // will clear the displayed `g` and do nothing
+    if (!vimCmdWaitNextInput) {
+      if (e.key == "g") {
+        vimCmdWaitNextInput = true;
+        echoVimCmd("g", false, vimCmd, true);
+      }
+    } else {
+      // if the next key is g again
+      if (e.key == "g") scroll(0);
+
+      exitVimCmd(vimCmd);
+      vimCmdWaitNextInput = false;
+    }
+  }
 
   if (vimCmdActive || !vimCmdAllowInput) {
     if (e.key == "Escape" || (e.key == "[" && e.ctrlKey)) {
       exitVimCmd(vimCmd);
+    }
+    // vim motion
+    else if (e.key == "j") {
+      scroll(200);
+    } else if (e.key == "k") {
+      scroll(-200);
+    } else if (e.key == "d" && e.ctrlKey) {
+      scroll(700);
+      e.preventDefault();
+    } else if (e.key == "u" && e.ctrlKey) {
+      scroll(-700);
+      e.preventDefault();
+    } else if (e.key == "G") {
+      scroll(document.body.scrollHeight);
     }
   }
 
