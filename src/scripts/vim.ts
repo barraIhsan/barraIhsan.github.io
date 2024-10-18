@@ -232,7 +232,8 @@ window.addEventListener("keydown", (e) => {
       if (blogsPointer == blogs.length) blogsPointer = 0;
       else if (blogsPointer < 0) blogsPointer = blogs.length - 1;
 
-      blogs[blogsPointer].focus();
+      // focus only if j or k pressed
+      if (e.key == "j" || e.key == "k") blogs[blogsPointer].focus();
     } else {
       // if it's not in blogs, just scroll
       if (e.key == "j") scroll(200);
