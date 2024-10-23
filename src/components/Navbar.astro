@@ -5,7 +5,7 @@ let pathname = Astro.url.pathname;
 ---
 
 <nav
-  class="fixed inset-x-0 top-0 py-8 md:py-16 motion-safe:transition-[padding] motion-safe:duration-500 z-50"
+  class="fixed inset-x-0 top-0 py-8 md:py-16 motion-safe:transition-[padding,transform] motion-safe:duration-500 z-50"
 >
   <div
     class="container mx-auto flex justify-between items-center px-5 sm:px-12"
@@ -62,23 +62,34 @@ let pathname = Astro.url.pathname;
 </nav>
 
 <script>
-  // nav
+  const pathname = window.location.pathname;
   const nav = document.querySelector("nav");
-  let scrollPos: number;
+  let prevScrollPos: number = window.scrollY;
 
-  let bigNav = ["py-8", "md:py-16"];
-
-  let smallNav = ["py-4", "md:py-6", "bg-gray-900/70", "backdrop-blur-lg"];
+  // class variable
+  const bigNav = ["py-8", "md:py-16"];
+  const smallNav = ["py-4", "md:py-6", "bg-gray-900/70", "backdrop-blur-lg"];
+  const noNav = ["-translate-y-full"];
 
   const updateNav = () => {
-    scrollPos = window.scrollY;
+    let scrollPos = window.scrollY;
     if (scrollPos <= 0) {
       nav?.classList.add(...bigNav);
       nav?.classList.remove(...smallNav);
+      nav?.classList.remove(...noNav);
     } else {
       nav?.classList.add(...smallNav);
       nav?.classList.remove(...bigNav);
+
+      if (pathname.startsWith("/blog/")) {
+        // hide nav when the user scroll down
+        // and show it again when the user scroll up
+        if (prevScrollPos < scrollPos) nav?.classList.add(...noNav);
+        else nav?.classList.remove(...noNav);
+      }
     }
+
+    prevScrollPos = scrollPos;
   };
 
   // run it when the web loaded for the first time
