@@ -4,7 +4,22 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        mono: ["Jetbrains Mono", "Courier New", "Courier", "monospace"],
+        sans: [
+          "Lexend Deca",
+          "Arial",
+          "Helvetica",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
+        mono: [
+          "Jetbrains Mono",
+          "ui-monospace",
+          "Consolas",
+          "Courier New",
+          "Courier",
+          "monospace",
+        ],
       },
       keyframes: {
         scroll: {
