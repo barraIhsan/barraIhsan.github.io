@@ -33,7 +33,18 @@ const { project } = Astro.props;
         class="absolute inset-0 bg-black size-full object-cover sm:group-hover:scale-110 transition-transform duration-300 brightness-100 mask-image-gradient-to-t from-transparent to-transparent/60 to-70%"
       />
     </div>
-    <p class=`${ project.small ? "xl:text-2xl" : "block sm:hidden" } text-xl mt-5 font-semibold`>{project.title}</p>
+    <div class={`${project.small ? "xl:text-2xl" : "block sm:hidden"} mt-5 flex justify-between items-center flex-wrap text-xl`}>
+      <p class="font-semibold">{project.title}</p>
+      {project.date && (
+      <time datetime={project.date} class="text-base md:text-lg text-gray-400">{
+        Intl.DateTimeFormat("en-GB", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric"
+        }).format(new Date(project.date))
+      }</time>
+      )}
+    </div>
     <p class=`${ project.small ? "sm:text-base xl:text-lg" : "block sm:hidden" } text-sm mt-2`>{project.desc}</p>
   </a>
   <div class=`${ project.small ? "sm:text-sm lg:text-lg lg:gap-3" : "sm:hidden" } text-xs flex flex-wrap gap-2 mt-5`>

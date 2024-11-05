@@ -10,6 +10,7 @@ export const schools = [
         name: "HTML",
       },
     ],
+    date: "2024-03-23",
   },
   {
     title: "Weekly Assignment 2",
@@ -26,6 +27,7 @@ export const schools = [
         name: "CSS",
       },
     ],
+    date: "2024-04-01",
   },
   {
     title: "Weekly Assignment 3",
@@ -42,6 +44,7 @@ export const schools = [
         name: "CSS",
       },
     ],
+    date: "2024-04-09",
   },
   {
     title: "Weekly Assignment 4",
@@ -62,6 +65,7 @@ export const schools = [
         name: "Bootstrap",
       },
     ],
+    date: "2024-04-29",
   },
   {
     title: "Profile Cards",
@@ -78,6 +82,7 @@ export const schools = [
         name: "CSS",
       },
     ],
+    date: "2024-04-09",
   },
   {
     title: "Umroh Plus Travel",
@@ -94,6 +99,7 @@ export const schools = [
         name: "CSS",
       },
     ],
+    date: "2024-04-21",
   },
   {
     title: "Multimedia Club",
@@ -110,6 +116,7 @@ export const schools = [
         name: "CSS",
       },
     ],
+    date: "2024-04-26",
   },
   {
     title: "Semeru Adventure",
@@ -130,5 +137,6 @@ export const schools = [
         name: "Bootstrap",
       },
     ],
+    date: "2024-04-27",
   },
 ];
