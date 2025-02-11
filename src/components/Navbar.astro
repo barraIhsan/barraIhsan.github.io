@@ -10,8 +10,10 @@ let pathname = Astro.url.pathname;
   <div
     class="container mx-auto flex justify-between items-center px-5 sm:px-12"
   >
-    <a class="text-3xl font-bold hidden lg:block" href="/">Barra</a>
-    <ul class="flex gap-6 md:gap-12 text-base sm:text-xl md:text-2xl">
+    <a class="flex-1 text-3xl font-bold hidden lg:block" href="/">Barra</a>
+    <ul
+      class="flex-1 flex lg:justify-center gap-[5vw] sm:gap-6 md:gap-12 text-base sm:text-xl md:text-2xl"
+    >
       <li>
         <a
           href="/"
@@ -40,7 +42,9 @@ let pathname = Astro.url.pathname;
         >
       </li>
     </ul>
-    <ul class="flex gap-5 md:gap-8 justify-center items-center">
+    <ul
+      class="flex-1 flex gap-[3vw] sm:gap-5 md:gap-8 justify-end items-center"
+    >
       <li>
         <a href="https://github.com/barraIhsan" target="_blank">
           <Icon
@@ -60,7 +64,7 @@ let pathname = Astro.url.pathname;
       <li>
         <a href="mailto:barra@duck.com">
           <Icon
-            name="heroicons:envelope"
+            name="heroicons:envelope-solid"
             class="size-6 md:size-8 fill-gray-50 transition-colors hover:fill-gray-300"
           />
         </a>
