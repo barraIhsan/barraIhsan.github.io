@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "AviaVentura",
     desc: "AviaVentura is a company that provides aero agency",
-    link: "https://aviaventura.vercel.app",
+    link: "https://aviaventura.com",
     stacks: [
       {
         icon: "astro",
